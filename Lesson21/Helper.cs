@@ -28,9 +28,10 @@ namespace Lesson21
             return result;
         }
 
+        private static Random rnd = new Random();
+
         public static Road CreateRandomRoad(this Road road, int min, int max)
-        {
-            var rnd = new Random(Guid.NewGuid().ToByteArray().Sum(x => x));
+        {            
             road.Number = "M" + rnd.Next(1, 100);
             road.Lenght = rnd.Next(min, max);
             return road;
